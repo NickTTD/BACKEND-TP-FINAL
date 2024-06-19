@@ -1,0 +1,109 @@
+<!-- Originalmente hice esta pagina standalone, comencé el Index.html y dije, hey, estaría piola incluir las listas acá abajo así queda todo junto, así que le quité varias cosas para que se vea 
+ decente incluído en index.html -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lista de Usuarios Fuerza</title>
+    <!-- Enlace al archivo de estilos de Tailwind CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="bg-gray-100">
+    <nav class="bg-blue-500 p-4">
+        <div class="container mx-auto flex justify-center items-center">
+          <h1 class="text-white font-bold text-xl">Listas</h1>
+        </div>
+      </nav>
+
+    <!-- Contenido principal -->
+    <div class="container mx-auto px-4 py-8">
+      <h1 class="text-3xl font-bold mb-4">Lista de Usuarios Fuerza</h1>
+      <table class="w-full border-collapse border border-gray-300">
+        <thead>
+          <tr class="bg-gray-200">
+            <th class="border border-gray-300 px-4 py-2">Nombre</th>
+            <th class="border border-gray-300 px-4 py-2">Edad</th>
+            <th class="border border-gray-300 px-4 py-2">Nacimiento</th>
+            <th class="border border-gray-300 px-4 py-2">Sith</th>
+            <th class="border border-gray-300 px-4 py-2">Habilidades Disponibles</th>
+            <th class="border border-gray-300 px-4 py-2">Sable de Luz</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for forceUser in forceUsers %}
+          <tr class="bg-white">
+            <td class="border border-gray-300 px-4 py-2">
+              {{ forceUser.name }}
+            </td>
+            <td class="border border-gray-300 px-4 py-2">
+              {{ forceUser.edad }}
+            </td>
+            <td class="border border-gray-300 px-4 py-2">
+              {{ forceUser.nacimiento }}
+            </td>
+            <td class="border border-gray-300 px-4 py-2">
+              {{ forceUser.sith }}
+            </td>
+            <td class="border border-gray-300 px-4 py-2">
+              {{ forceUser.HabilidadesDisponibles }} <!-- Intenté hacer un bucle que muestre las habilidades, sin éxito-->
+            </td>
+            <td class="border border-gray-300 px-4 py-2">
+              {{ forceUser.Sable}}  <!-- Acá no se por que no funciona forceUser.Sable.material, actualmente muestra el ID del sable-->
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <h1 class="text-3xl font-bold mb-4">Lista de Sables de Luz</h1>
+      <table class="w-full border-collapse border border-gray-300">
+        <thead>
+          <tr class="bg-gray-200">
+            <th class="border border-gray-300 px-4 py-2">Material</th>
+            <th class="border border-gray-300 px-4 py-2">Año de Creación</th>
+            <th class="border border-gray-300 px-4 py-2">Color del sable</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for lightsaber in Lightsabers %}
+            <tr class="bg-white">
+              <td class="border border-gray-300 px-4 py-2">
+                {{ lightsaber.material }}
+              </td>
+              <td class="border border-gray-300 px-4 py-2">
+                {{ lightsaber.año_creación }}
+              </td>
+              <td class="border border-gray-300 px-4 py-2">
+                {{ lightsaber.color }}
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+      </table>
+      <h1 class="text-3xl font-bold mb-4">Lista de Habilidades</h1>
+      <table class="w-full border-collapse border border-gray-300">
+        <thead>
+          <tr class="bg-gray-200">
+            <th class="border border-gray-300 px-4 py-2">Habilidad</th>
+            <th class="border border-gray-300 px-4 py-2">Dificultad</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for habilidad in Habilidades %}
+            <tr class="bg-white">
+              <td class="border border-gray-300 px-4 py-2">
+                {{ habilidad.name }}
+              </td>
+              <td class="border border-gray-300 px-4 py-2">
+                {{ habilidad.dificultad }}
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+      </table>
+    </div>
+  </body>
+</html>

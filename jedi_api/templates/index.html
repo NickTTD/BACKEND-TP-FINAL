@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inicio Proyecto Final</title>
+  <!-- Enlace al archivo de estilos de Tailwind CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100">
+    <nav class="bg-blue-500 p-4">
+        <div class="container mx-auto flex justify-center items-center">
+          <h1 class="text-white font-bold text-xl">Inicio proyecto final Nico Díaz</h1>
+        </div>
+      </nav>
+
+  <div class="max-w-lg mx-auto mt-5">
+
+    <div class="bg-white p-6 rounded-lg shadow-lg">
+        <h2 class="text-2xl font-bold">Formularios</h2>
+        <h5 class="text-gray-500 mb-4 lg:text-xs">Recomiendo de izquierda a derecha si la db está vacía.</h5>
+        <div class="mt-4 flex">
+            <a href="{% url 'lightsaber_form' %}" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l inline-flex items-center">
+                <span class="whitespace-nowrap">Sables</span>
+            </a>
+            <a href="{% url 'habilidad_form' %}" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 inline-flex items-center">
+                <span class="whitespace-nowrap">Habilidades</span>
+            </a>
+            <a href="{% url 'force_form' %}" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-r inline-flex items-center">
+                <span class="whitespace-nowrap">Usuarios Fuerza</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="bg-white p-6 rounded-lg shadow-lg mt-5 mb-5">
+        <h2 class="text-2xl font-bold">REST JSONs</h2>
+        <h6 class="text-gray-500 mb-4 lg:text-xs">Este subtítulo podría quitarse, pero simetría.</h5>
+        <div class="mt-4 flex">
+            <a href="{% url 'lightsaber_rest' %}" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l inline-flex items-center">
+                <span class="whitespace-nowrap">Sables</span>
+            </a>
+            <a href="{% url 'Habilidades_rest' %}" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 inline-flex items-center">
+                <span class="whitespace-nowrap">Habilidades</span>
+            </a>
+            <a href="{% url 'usuarioFuerza_rest' %}" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-r inline-flex items-center">
+                <span class="whitespace-nowrap">Usuarios Fuerza</span>
+            </a>
+        </div>
+    </div>
+
+</div>
+{% include 'index_jedi.html' %}
+
+</body>
+
+</html>
